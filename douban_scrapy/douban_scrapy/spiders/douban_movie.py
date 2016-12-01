@@ -8,6 +8,8 @@ import json
 import sys
 import threading
 from ..settings import *
+import random
+import string
 
 
 class DoubanMovieSpider(scrapy.Spider):
@@ -31,7 +33,7 @@ class DoubanMovieSpider(scrapy.Spider):
 
     def __init__(self, *a, **kwargs):
         super().__init__(*a, **kwargs)
-
+        DEFAULT_REQUEST_HEADERS['Cookie'] = "bid=%s" % "".join(random.sample(string.ascii_letters + string.digits, 11))
         self.headers = DEFAULT_REQUEST_HEADERS
         # self.headers = self.settings.get('DEFAULT_REQUEST_HEADERS')
         self.movie_id = 0
@@ -113,7 +115,7 @@ class DoubanMovieSpider(scrapy.Spider):
             if item.split(':')[0] == "IMDb链接":
                 movie_IMDb_link = item.split(':')[1].replace(' ', '')
                 movie_IMDb_link = "http://www.imdb.com/title/" + str(movie_IMDb_link)
-                print(movie_IMDb_link)
+                # print(movie_IMDb_link)
                 imdb_rating_item = ImdbRatingItem(
                     movie_id=None,
                     movie_imdb_rating=None,
@@ -162,7 +164,7 @@ class DoubanMovieSpider(scrapy.Spider):
             temp_award = []
             for i in movie_award:
                 if i != '':
-                    print(i)
+                    # print(i)
                     temp_award.append(i)
             movie_award = temp_award
         # 喜欢这部电影也喜欢的电影
@@ -203,6 +205,7 @@ class DoubanMovieSpider(scrapy.Spider):
         )
         stills_link_item['movie_id'] = movie_id
         stills_link_item['movie_stills_photos_links'] = []
+        self.headers['Cookie'] = "bid=%s" % "".join(random.sample(string.ascii_letters + string.digits, 11))
         yield scrapy.Request(
             url=still_url,
             meta={'item': stills_link_item},
@@ -213,12 +216,14 @@ class DoubanMovieSpider(scrapy.Spider):
         self.headers['Referer'] = 'https://movie.douban.com/subject/' + movie_id + '/all_photos'
         poster_url = "https://movie.douban.com/subject/" + str(
             movie_id) + "/photos?type=R"
+        self.headers['Cookie'] = "bid=%s" % "".join(random.sample(string.ascii_letters + string.digits, 11))
         poster_link_item = PosterLinksItem(
             movie_id=None,
             movie_poster_photos_links=None,
         )
         poster_link_item['movie_id'] = movie_id
         poster_link_item['movie_poster_photos_links'] = []
+        self.headers['Cookie'] = "bid=%s" % "".join(random.sample(string.ascii_letters + string.digits, 11))
         yield scrapy.Request(
             url=poster_url,
             meta={'item': poster_link_item},
@@ -235,6 +240,7 @@ class DoubanMovieSpider(scrapy.Spider):
         )
         short_comment_item['movie_id'] = movie_id
         short_comment_item['comment_list'] = []
+        self.headers['Cookie'] = "bid=%s" % "".join(random.sample(string.ascii_letters + string.digits, 11))
         yield scrapy.Request(
             url=comment_url,
             meta={'item': short_comment_item},
@@ -250,6 +256,7 @@ class DoubanMovieSpider(scrapy.Spider):
         )
         review_item['movie_id'] = movie_id
         review_item['review_list'] = []
+        self.headers['Cookie'] = "bid=%s" % "".join(random.sample(string.ascii_letters + string.digits, 11))
         yield scrapy.Request(
             url=review_url,
             meta={'item': review_item},
@@ -424,7 +431,7 @@ class DoubanMovieSpider(scrapy.Spider):
             next_url = response.xpath(
                 '//div[@id="wrapper"]/div[@id="content"]/div[@class="grid-16-8 clearfix"]/div[@class="article"]/div[@id="comments"]/div[@id="paginator"]/a[@class="next"]/@href').extract_first()
             next_url = "https://movie.douban.com/subject/" + short_comment_item['movie_id'] + "/comments" + next_url
-            print(next_url)
+            # print(next_url)
             self.headers['Referer'] = response.url
             request = scrapy.Request(
                 url=next_url,

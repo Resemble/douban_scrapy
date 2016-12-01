@@ -168,7 +168,7 @@ class MySQLStorePipeline(object):
                         item['movie_imdb_rating']
                     )
                 )
-                print("imdb_rating success")
+                # print("imdb_rating success")
             except Exception as err:
                 self.logger.error(
                     'Failed to insert data into table {0:s}'.format(
@@ -189,7 +189,7 @@ class MySQLStorePipeline(object):
                         self.still_link_item_count
                     )
                 )
-                print("stills_links success")
+                # print("stills_links success")
                 self.still_link_item_count += 1
             except Exception as err:
                 self.logger.error(
@@ -211,7 +211,7 @@ class MySQLStorePipeline(object):
                         self.poster_link_item_count
                     )
                 )
-                print("stills_links success")
+                # print("stills_links success")
                 self.poster_link_item_count += 1
             except Exception as err:
                 self.logger.error(
