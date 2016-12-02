@@ -137,7 +137,7 @@ class DoubanMovieSpider(scrapy.Spider):
         # 简介
         movie_synopsis = movie_content.find('div', id="link-report")
         if movie_synopsis is not None:
-            movie_synopsis = movie_synopsis.span.get_text().replace(' ', '').replace('\n', '').replace(
+            movie_synopsis = movie_synopsis.span.get_text().replace('\n', '').replace(
                 '\u3000\u3000',
                 '')
         else:
