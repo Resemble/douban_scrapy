@@ -25,7 +25,7 @@ class DoubanMovieItem(scrapy.Item):
     #    movie_reviews   几个影评
     #    movie_short_comments_link   所有短评页面链接
     #    movie_short_pop_comments    几个热门短评
-
+    movie_movie = scrapy.Field()
     movie_id = scrapy.Field()
     movie_name = scrapy.Field()
     movie_year = scrapy.Field()

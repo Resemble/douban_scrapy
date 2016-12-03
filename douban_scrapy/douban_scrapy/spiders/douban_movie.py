@@ -35,7 +35,6 @@ class DoubanMovieSpider(scrapy.Spider):
         super().__init__(*a, **kwargs)
         DEFAULT_REQUEST_HEADERS['Cookie'] = "bid=%s" % "".join(random.sample(string.ascii_letters + string.digits, 11))
         self.headers = DEFAULT_REQUEST_HEADERS
-        # self.headers = self.settings.get('DEFAULT_REQUEST_HEADERS')
         self.movie_id = 0
         self.cur_stills_requests = 0
         self.cur_poster_requests = 0
@@ -62,79 +61,105 @@ class DoubanMovieSpider(scrapy.Spider):
 
     def parse(self, response):
         # print(response.url)
-        global movie_directors, movie_screenwriters, movie_actors, movie_types, movie_official_website, movie_IMDb_link
-        global movie_origin_place, movie_release_dates, movie_languages, movie_runtime, movie_another_names
-        global movie_award
         movie_id = str(response.url.split('/')[4])
         print(movie_id)
         bs_obj = BeautifulSoup(response.body, "lxml")
+
+        soup = BeautifulSoup(response.body, "lxml")
+
+        content = soup.find("div", id="content")
+
+        # 标题
+        name_and_year = [item.get_text() for item in content.find("h1").find_all("span")]
+        name, year = name_and_year if len(name_and_year) == 2 else (name_and_year[0], "")
+        movie = [name.strip(), year.strip("()")]
+
+        # 左边
+        content_left = soup.find("div", class_="subject clearfix")
+
+        nbg_soup = content_left.find("a", class_="nbgnbg").find("img")
+        movie.append(nbg_soup.get("src") if nbg_soup else "")
+
+        info = content_left.find("div", id="info").get_text()
+        info_dict = dict(
+            [line.strip().split(":", 1) for line in info.strip().split("\n") if line.strip().find(":") > 0])
+
+        movie_directors = info_dict.get("导演", "").replace("\t", " ")
+        movie_screenwriters = info_dict.get("编剧", "").replace("\t", " ")
+        movie_actors = info_dict.get("主演", "").replace("\t", " ")
+        movie_types = info_dict.get("类型", "").replace("\t", " ")
+        movie_official_website = info_dict.get("官方网站", "").replace("\t", " ")
+        movie_origin_place = info_dict.get("制片国家/地区", "").replace("\t", " ")
+        movie_release_dates = info_dict.get("上映日期", "").replace("\t", " ") if "上映日期" in info_dict else info_dict.get(
+            "首播",
+            "").replace(
+            "\t", " ")
+        movie_languages = info_dict.get("语言", "").replace("\t", " ")
+        movie_runtime = info_dict.get("片长", "").replace("\t", " ").strip().replace('分钟',
+                                                                                   '') if "片长" in info_dict else info_dict.get(
+            "单集片长", "").replace("\t", " ")
+        movie_IMDb_link = info_dict.get("IMDb链接", "").replace("\t", " ")
+        movie_award = ""
+        movie_another_names = info_dict.get("又名", "").replace("\t", " ")
+
+        movie.append(info_dict.get("导演", "").replace("\t", " "))
+        movie.append(info_dict.get("编剧", "").replace("\t", " "))
+        movie.append(info_dict.get("主演", "").replace("\t", " "))
+
+        movie.append(info_dict.get("类型", "").replace("\t", " "))
+        movie.append(info_dict.get("制片国家/地区", "").replace("\t", " "))
+        movie.append(info_dict.get("语言", "").replace("\t", " "))
+
+        movie.append(info_dict.get("上映日期", "").replace("\t", " ") if "上映日期" in info_dict else info_dict.get("首播",
+                                                                                                            "").replace(
+            "\t", " "))
+        movie.append(info_dict.get("季数", "").replace("\t", " "))
+        movie.append(info_dict.get("集数", "").replace("\t", " "))
+        movie.append(
+            info_dict.get("片长", "").replace("\t", " ") if "片长" in info_dict else info_dict.get("单集片长", "").replace(
+                "\t", " "))
+
+        movie.append(info_dict.get("又名", "").replace("\t", " "))
+        movie.append(info_dict.get("官方网站", "").replace("\t", " "))
+        movie.append(info_dict.get("官方小站", "").replace("\t", " "))
+        movie.append(info_dict.get("IMDb链接", "").replace("\t", " "))
+
+        # 右边
+        content_right = soup.find("div", class_="rating_wrap clearbox")
+        if content_right:
+            movie.append(content_right.find("strong", class_="ll rating_num").get_text())
+
+            rating_people = content_right.find("a", class_="rating_people")
+            movie.append(rating_people.find("span").get_text() if rating_people else "")
+
+            rating_per_list = [item.get_text() for item in content_right.find_all("span", class_="rating_per")]
+            movie.append(", ".join(rating_per_list))
+        else:
+            movie.extend(["", "", ""])
+
         movie_content = bs_obj.find('div', id='content')
         movie_name = movie_content.h1.span.get_text()
         movie_year = movie_content.find('span', class_='year').get_text()
         movie_year = re.sub(r"[()]", "", movie_year)
         movie_year = re.match(r'\d{4}', movie_year).group(0)
-        movie_info = movie_content.find('div', id='info')
-        movie_info_items = movie_info.get_text().split('\n')
-        movie_directors = ""
-        movie_screenwriters = ""
-        movie_actors = ""
-        movie_types = ""
-        movie_official_website = ""
-        movie_origin_place = ""
-        movie_release_dates = ""
-        movie_languages = ""
-        movie_runtime = ""
-        movie_another_names = ""
-        movie_IMDb_link = ""
-        movie_award = ""
-        for item in movie_info_items:
-            # print(item.split(':')[0])
-            if item.split(':')[0] == "导演":
-                movie_directors = item.split(':')[1].replace(' ', '').split('/')
-            if item.split(':')[0] == "编剧":
-                movie_screenwriters = item.split(':')[1].replace(' ', '').split('/')
-            if item.split(':')[0] == "主演":
-                movie_actors = item.split(':')[1].replace(' ', '').replace('更多...', '').split('/')
-            if item.split(':')[0] == "类型":
-                movie_types = item.split(':')[1].replace(' ', '').split('/')
-            # if item.split(':')[0] == "官方网站":
-            #     movie_official_website = item.split(':')[1].replace(' ', '')
-            if re.match('官方网站', item):
-                movie_official_website = item.replace("官方网站:", "")
-            if item.split(':')[0] == "制片国家/地区":
-                movie_origin_place = item.split(':')[1].replace(' ', '').split('/')
-            if item.split(':')[0] == "语言":
-                movie_languages = item.split(':')[1].replace(' ', '').split('/')
-            if item.split(':')[0] == "上映日期":
-                movie_release_dates = item.split(':')[1].replace(' ', '').split('/')
-            if item.split(':')[0] == "片长":
-                movie_runtime = item.split(':')[1].strip().replace('分钟', '')
-                runtime = re.match("(\d{1,3})", movie_runtime)
-                movie_runtime = runtime.group(1)
-            if item.split(':')[0] == "又名":
-                movie_another_names = item.split(':')[1].replace(' ', '').split('/')
-            if item.split(':')[0] == "IMDb链接":
-                movie_IMDb_link = item.split(':')[1].replace(' ', '')
-                movie_IMDb_link = "http://www.imdb.com/title/" + str(movie_IMDb_link)
-                # print(movie_IMDb_link)
-                imdb_rating_item = ImdbRatingItem(
-                    movie_id=None,
-                    movie_imdb_rating=None,
+
+        if info_dict.get("IMDb链接", ""):
+            movie_IMDb_link = "http://www.imdb.com/title/" + str(movie_IMDb_link).strip()
+            imdb_rating_item = ImdbRatingItem(
+                movie_id=None,
+                movie_imdb_rating=None,
+            )
+            imdb_rating_item['movie_id'] = movie_id
+            try:
+                # imd 评分
+                yield scrapy.Request(
+                    url=movie_IMDb_link,
+                    meta={'item': imdb_rating_item},
+                    callback=self.parse_imdb
                 )
-                imdb_rating_item['movie_id'] = movie_id
-                try:
-                    # imd 评分
-                    yield scrapy.Request(
-                        url=movie_IMDb_link,
-                        meta={'item': imdb_rating_item},
-                        callback=self.parse_imdb
-                    )
-                except Exception as err:
-                    print(err)
-            if item.split(':')[0] == "首播":
-                movie_premiere = item.split(':')[1].replace(' ', '').split('/')
-            if item.split(':')[0] == "集数":
-                movie_numbers = item.split(':')[1].replace(' ', '').split('/')
+            except Exception as err:
+                print(err)
+
         # 简介
         movie_synopsis = movie_content.find('div', id="link-report")
         if movie_synopsis is not None:

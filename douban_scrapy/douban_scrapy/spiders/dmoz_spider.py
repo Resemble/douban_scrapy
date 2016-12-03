@@ -5,9 +5,9 @@ from bs4 import BeautifulSoup
 
 class DmozSpider(scrapy.Spider):
     name = "dmoz"
-    allowed_domains = ["imdb.com"]
+    allowed_domains = ["imdb.com", "movie.douban.com"]
     start_urls = [
-        "https://movie.douban.com/subject/26683290/comments?start=0&limit=20&sort=new_score",
+        "https://movie.douban.com/subject/10001432/",
     ]
 
     # allowed_domains = ["movie.douban.com/"]
@@ -20,6 +20,8 @@ class DmozSpider(scrapy.Spider):
     def parse(self, response):
         print("----------------")
         bs_obj_comment = BeautifulSoup(response.body, "lxml")
+
+
         # movie_content = []
         # movie_short_comments_mod = movie_content.find('div', class_="article").find('div', id="comments-section").find(
         #     'div', class_="mod-hd")

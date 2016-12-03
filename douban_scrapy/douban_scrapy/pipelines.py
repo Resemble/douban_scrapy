@@ -10,6 +10,7 @@ import sys
 import logging
 from .items import DoubanMovieItem, ImdbRatingItem, StillsLinksItem, ShortCommentsItem, PosterLinksItem, ReviewsItem
 import json
+import threading
 
 
 class DoubanScrapyPipeline(object):
@@ -32,6 +33,8 @@ class MySQLStorePipeline(object):
         self.short_comment_item_count = 1
         self.poster_link_item_count = 1
         self.review_item_count = 1
+
+        self.douban_lock = threading.Lock()
 
         self.logger = logging.getLogger(__name__)
         self.logger.setLevel(logging.INFO)
@@ -62,17 +65,49 @@ class MySQLStorePipeline(object):
         # 如果表不存在，则首先建表
         try:
             self.cursor.execute(
-                'CREATE TABLE IF NOT EXISTS {0:s} (`id` INT NOT NULL AUTO_INCREMENT , '
-                '`douban_id` VARCHAR(12) NOT NULL UNIQUE, `name` VARCHAR(600), '
-                '`douban_rating` CHAR(3), `imdb_rating` CHAR(3), `release_year` VARCHAR(40) ,'
-                '`directors` VARCHAR(600), `screenwriters` VARCHAR(600), `actors` VARCHAR(500),'
-                '`types` VARCHAR(100), `official_website` VARCHAR(100), `origin_place` VARCHAR(30),'
-                '`release_date` VARCHAR(600), `languages` VARCHAR(500), `runtime` VARCHAR(10), `imdb_link` VARCHAR(50),'
-                '`another_names` VARCHAR(100), `cover_link` VARCHAR(150), `synopsis` TEXT, `stills_photos_links` JSON,'
-                '`poster_photos_links` JSON, `wallpaper_photos_links` JSON,`awards` TEXT, `also_like_movies` VARCHAR(200), '
-                '`reviews` TEXT, '
-                '`short_pop_comments` TEXT,'
-                ' PRIMARY KEY(id));'.format(
+                """CREATE TABLE mirs_movie(
+                      `id` INT NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+                      `douban_id` VARCHAR(12) NOT NULL UNIQUE COMMENT '豆瓣电影ID',
+                      `name` VARCHAR(600) COMMENT '电影名',
+                      `douban_rating` CHAR(3) COMMENT '豆瓣评分',
+                      `imdb_rating` CHAR(3) COMMENT 'IMDb评分',
+                      `release_year` CHAR(4) COMMENT '电影发行年份',
+                      `directors` VARCHAR(600) COMMENT '电影导演',
+                      `screenwriters` VARCHAR(600) COMMENT '编剧',
+                      `actors` VARCHAR(500) COMMENT '相关演员',
+                      `types` VARCHAR(100) COMMENT '电影类型',
+                      `official_website` VARCHAR(100) COMMENT '官网',
+                      `origin_place` VARCHAR(30) COMMENT '国家',
+                      `release_date` VARCHAR(600) COMMENT '上映时间',
+                      `languages` VARCHAR(500) COMMENT '语言',
+                      `runtime` VARCHAR(10) COMMENT '时长',
+                      `another_names` VARCHAR(100) COMMENT '又名',
+                      `imdb_link` VARCHAR(50) COMMENT 'IMDb的电影链接',
+                      `cover_link` VARCHAR(150) COMMENT '电影封面链接',
+                      `synopsis` TEXT COMMENT '剧情概要',
+                      `stills_photos_links` JSON COMMENT '剧照照片集合页面链接',
+                      `poster_photos_links` JSON COMMENT '海报照片集合页面链接',
+                      `wallpaper_photos_links` JSON COMMENT '壁纸照片集合页面链接',
+                      `awards` TEXT COMMENT '获奖',
+                      `also_like_movies` VARCHAR(200) COMMENT '喜欢这部电影的人同样喜欢的电影',
+                      `reviews` TEXT COMMENT '几个影评',
+                      `short_pop_comments` TEXT COMMENT '几个热门短评',
+                      PRIMARY KEY (id),
+                      INDEX idx_id(id),
+                      INDEX idx_douban_id(douban_id),
+                      INDEX idx_name(name),
+                      INDEX idx_douban_rating(douban_rating),
+                      INDEX idx_imdb_rating(imdb_rating),
+                      INDEX idx_year(release_year),
+                      INDEX idx_directors(directors),
+                      INDEX idx_screenwriters(screenwriters),
+                      INDEX idx_actors(actors),
+                      INDEX idx_types(types),
+                      INDEX idx_origin_place(origin_place),
+                      INDEX idx_languages(languages),
+                      INDEX idx_runtime(runtime),
+                      INDEX idx_another_names(another_names)
+                    )ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT '电影基本信息表';""".format(
                     self.table_name_dict['mirs_movie']
                 )
             )
@@ -89,19 +124,22 @@ class MySQLStorePipeline(object):
     def process_item(self, item, spider):
         if isinstance(item, DoubanMovieItem):
             try:
-                sql = 'INSERT IGNORE INTO mirs_movie(douban_id,name,douban_rating,release_year,directors,screenwriters,' \
+                self.douban_lock.acquire()
+                sql = 'INSERT IGNORE INTO mirs_movie(douban_id, name,douban_rating,release_year,directors,screenwriters,' \
                       'actors,types,official_website,origin_place,release_date,languages,runtime,another_names,' \
-                      'cover_link,synopsis,awards,also_like_movies) VALUES (%s, %s, %s, %s,%s, %s, %s, %s,%s, %s, %s,' \
-                      '%s,%s, %s, %s, %s, %s, %s)'
+                      'imdb_link,cover_link,synopsis,awards,also_like_movies) VALUES (%s, %s, %s, %s, %s,%s, %s, %s,' \
+                      ' %s, %s,%s, %s, %s,' \
+                      '%s,%s, %s, %s, %s, %s)'
                 data = (item['movie_id'], item['movie_name'], item['movie_douban_rating'], item['movie_year'],
                         item['movie_directors'], item['movie_screenwriters'], item['movie_actors'], item['movie_types'],
                         item['movie_official_website'], item['movie_origin_place'], item['movie_release_dates'],
                         item['movie_languages'],
-                        item['movie_runtime'], item['movie_another_names'], item['movie_cover_link'],
-                        item['movie_synopsis'],
+                        item['movie_runtime'], item['movie_another_names'], item['movie_IMDb_link'],
+                        item['movie_cover_link'], item['movie_synopsis'],
                         item['movie_awards'], item['movie_also_like_movies'])
                 self.cursor.execute(sql, data)
                 self.connector.commit()
+                self.douban_lock.release()
                 self.logger.info(
                     'Write a DoubanMovieItem (movie_id: {0:s}) and (movie_name: {1:s})'.format(
                         item['movie_id'],

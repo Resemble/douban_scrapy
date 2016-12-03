@@ -161,12 +161,12 @@ MYSQL_DATABASE = 'douban_movie'
 # Your mysql host
 MYSQL_HOST = '127.0.0.1'
 # Your mysql charset
-MYSQL_CHARSET = 'UTF8'
+MYSQL_CHARSET = 'UTF8MB4'
 
 # 默认Item并发数：100
 CONCURRENT_ITEMS = 100
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 48
+CONCURRENT_REQUESTS = 16
 # CONCURRENT_REQUESTS = 2
 
 # Configure a delay for requests for the same website (default: 0)
