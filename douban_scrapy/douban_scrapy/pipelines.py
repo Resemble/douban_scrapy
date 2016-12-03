@@ -67,10 +67,12 @@ class MySQLStorePipeline(object):
                 '`douban_rating` CHAR(3), `imdb_rating` CHAR(3), `release_year` VARCHAR(40) ,'
                 '`directors` VARCHAR(600), `screenwriters` VARCHAR(600), `actors` VARCHAR(500),'
                 '`types` VARCHAR(100), `official_website` VARCHAR(100), `origin_place` VARCHAR(30),'
-                '`release_date` VARCHAR(600), `languages` VARCHAR(500), `runtime` VARCHAR(10),'
+                '`release_date` VARCHAR(600), `languages` VARCHAR(500), `runtime` VARCHAR(10), `imdb_link` VARCHAR(50),'
                 '`another_names` VARCHAR(100), `cover_link` VARCHAR(150), `synopsis` TEXT, `stills_photos_links` JSON,'
-                '`poster_photos_links` JSON,`awards` TEXT, `also_like_movies` VARCHAR(200), `short_pop_comments` TEXT,'
-                '`reviews` TEXT, PRIMARY KEY(id));'.format(
+                '`poster_photos_links` JSON, `wallpaper_photos_links` JSON,`awards` TEXT, `also_like_movies` VARCHAR(200), '
+                '`reviews` TEXT, '
+                '`short_pop_comments` TEXT,'
+                ' PRIMARY KEY(id));'.format(
                     self.table_name_dict['mirs_movie']
                 )
             )
@@ -78,66 +80,7 @@ class MySQLStorePipeline(object):
             print(err)
 
 
-        # try:
-        #     self.cursor.execute(
-        #         'CREATE TABLE IF NOT EXISTS {0:s} (`id` INT NOT NULL AUTO_INCREMENT , '
-        #         '`douban_id` VARCHAR(12) NOT NULL UNIQUE, `name` VARCHAR(600), '
-        #         '`douban_rating` CHAR(3), `release_year` VARCHAR(40) COMMENT "电影发行年份",'
-        #         '`directors` VARCHAR(600), `screenwriters` VARCHAR(600), `actors` VARCHAR(500),'
-        #         '`types` VARCHAR(100), `official_website` VARCHAR(100), `origin_place` VARCHAR(30),'
-        #         '`release_date` VARCHAR(600), `languages` VARCHAR(500), `runtime` VARCHAR(10),'
-        #         '`another_names` VARCHAR(100), `cover_link` VARCHAR(150), `synopsis` TEXT,'
-        #         '`awards` TEXT, `also_like_movies` VARCHAR(200), PRIMARY KEY(id));'.format(
-        #             self.table_name_dict['mirs_movie_test']
-        #         )
-        #     )
-        # except Exception as err:
-        #     print(err)
-        # try:
-        #     self.cursor.execute(
-        #         'CREATE TABLE IF NOT EXISTS {0:s} (`id` INT NOT NULL AUTO_INCREMENT , '
-        #         '`douban_id` VARCHAR(12) NOT NULL UNIQUE, `imdb_rating` CHAR(3), PRIMARY KEY(id));'.format(
-        #             self.table_name_dict['imdb_rating']
-        #         )
-        #     )
-        # except Exception as err:
-        #     print(err)
-        # try:
-        #     self.cursor.execute(
-        #         'CREATE TABLE IF NOT EXISTS {0:s} (`id` INT NOT NULL AUTO_INCREMENT , '
-        #         '`douban_id` VARCHAR(12) NOT NULL UNIQUE, `stills_photos_links` JSON, PRIMARY KEY(id));'.format(
-        #             self.table_name_dict['stills_links']
-        #         )
-        #     )
-        # except Exception as err:
-        #     print(err)
-        # try:
-        #     self.cursor.execute(
-        #         'CREATE TABLE IF NOT EXISTS {0:s} (`id` INT NOT NULL AUTO_INCREMENT , '
-        #         '`douban_id` VARCHAR(12) NOT NULL UNIQUE, `poster_photos_links` JSON, PRIMARY KEY(id));'.format(
-        #             self.table_name_dict['poster_links']
-        #         )
-        #     )
-        # except Exception as err:
-        #     print(err)
-        # try:
-        #     self.cursor.execute(
-        #         'CREATE TABLE IF NOT EXISTS {0:s} (`id` INT NOT NULL AUTO_INCREMENT , '
-        #         '`douban_id` VARCHAR(12) NOT NULL UNIQUE, `comment_list` TEXT, PRIMARY KEY(id));'.format(
-        #             self.table_name_dict['short_comments']
-        #         )
-        #     )
-        # except Exception as err:
-        #     print(err)
-        # try:
-        #     self.cursor.execute(
-        #         'CREATE TABLE IF NOT EXISTS {0:s} (`id` INT NOT NULL AUTO_INCREMENT , '
-        #         '`douban_id` VARCHAR(12) NOT NULL UNIQUE, `review_list` TEXT, PRIMARY KEY(id));'.format(
-        #             self.table_name_dict['reviews']
-        #         )
-        #     )
-        # except Exception as err:
-        #     print(err)
+
 
     def close_spider(self, spider):
         self.cursor.close()
@@ -146,7 +89,7 @@ class MySQLStorePipeline(object):
     def process_item(self, item, spider):
         if isinstance(item, DoubanMovieItem):
             try:
-                sql = 'INSERT INTO mirs_movie(douban_id,name,douban_rating,release_year,directors,screenwriters,' \
+                sql = 'INSERT IGNORE INTO mirs_movie(douban_id,name,douban_rating,release_year,directors,screenwriters,' \
                       'actors,types,official_website,origin_place,release_date,languages,runtime,another_names,' \
                       'cover_link,synopsis,awards,also_like_movies) VALUES (%s, %s, %s, %s,%s, %s, %s, %s,%s, %s, %s,' \
                       '%s,%s, %s, %s, %s, %s, %s)'
@@ -165,7 +108,7 @@ class MySQLStorePipeline(object):
                         item['movie_name']
                     )
                 )
-                print("DoubanMovieItem success")
+                # print("DoubanMovieItem success")
             except Exception as err:
                 self.logger.error(
                     'Failed to insert data into table {0:s}'.format(

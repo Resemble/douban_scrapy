@@ -62,7 +62,7 @@ class DoubanMovieSpider(scrapy.Spider):
 
     def parse(self, response):
         # print(response.url)
-        global movie_directors, movie_screenwriters, movie_actors, movie_types, movie_official_website
+        global movie_directors, movie_screenwriters, movie_actors, movie_types, movie_official_website, movie_IMDb_link
         global movie_origin_place, movie_release_dates, movie_languages, movie_runtime, movie_another_names
         global movie_award
         movie_id = str(response.url.split('/')[4])
@@ -85,6 +85,7 @@ class DoubanMovieSpider(scrapy.Spider):
         movie_languages = ""
         movie_runtime = ""
         movie_another_names = ""
+        movie_IMDb_link = ""
         movie_award = ""
         for item in movie_info_items:
             # print(item.split(':')[0])
@@ -139,7 +140,7 @@ class DoubanMovieSpider(scrapy.Spider):
         if movie_synopsis is not None:
             movie_synopsis = movie_synopsis.span.get_text().replace('\n', '').replace(
                 '\u3000\u3000',
-                '')
+                '').strip()
         else:
             movie_synopsis = ""
         # 获奖 电视剧的需要改
@@ -278,6 +279,7 @@ class DoubanMovieSpider(scrapy.Spider):
         item['movie_languages'] = str(movie_languages)
         item['movie_runtime'] = str(movie_runtime)
         item['movie_another_names'] = str(movie_another_names)
+        item['movie_IMDb_link'] = str(movie_IMDb_link)
         item['movie_cover_link'] = str(movie_cover_link)
         item['movie_synopsis'] = str(movie_synopsis)
         item['movie_awards'] = str(movie_award)

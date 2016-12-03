@@ -166,7 +166,7 @@ MYSQL_CHARSET = 'UTF8'
 # 默认Item并发数：100
 CONCURRENT_ITEMS = 100
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 100
+CONCURRENT_REQUESTS = 48
 # CONCURRENT_REQUESTS = 2
 
 # Configure a delay for requests for the same website (default: 0)
