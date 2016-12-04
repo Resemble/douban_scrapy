@@ -166,7 +166,7 @@ MYSQL_CHARSET = 'UTF8MB4'
 # 默认Item并发数：100
 CONCURRENT_ITEMS = 100
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 16
+CONCURRENT_REQUESTS = 48
 # CONCURRENT_REQUESTS = 2
 
 # Configure a delay for requests for the same website (default: 0)
@@ -198,18 +198,7 @@ DEFAULT_REQUEST_HEADERS = {
 
 }
 
-# headers2 = {
-#     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-#     'Accept-Encoding': 'gzip, deflate, sdch, br',
-#     'Accept-Language': 'zh-CN,zh;q=0.8',
-#     'Cache-Control': 'no-cache',
-#     'Connection': 'keep-alive',
-#     'Cookie': 'bid="8gWdRndOu8A"; ll="118318"; gr_user_id=0e15fd61-b612-4585-848f-67efbd8cbfda; viewed="26767354_26613463_3288908_11614538_3711653_25786138_3794471_25980975_25755874_4922689"; ct=y; push_noty_num=0; push_doumail_num=0; _vwo_uuid_v2=3F90AEC7B02CF82F9075F0897A97B3DA|9b8c1dcb472d2b7a35df79d6f82a6148; ap=1; _pk_ref.100001.4cf6=%5B%22%22%2C%22%22%2C1476097337%2C%22https%3A%2F%2Fwww.google.com.hk%2F%22%5D; _pk_id.100001.4cf6=6b9240f7030f2333.1470222117.20.1476099215.1476091776.; _pk_ses.100001.4cf6=*; __utma=30149280.735639331.1460979507.1476090095.1476097338.55; __utmb=30149280.0.10.1476097338; __utmc=30149280; __utmz=30149280.1475659687.53.45.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); __utmv=30149280.15077; __utma=223695111.1630462862.1470222118.1476090095.1476097338.20; __utmb=223695111.0.10.1476097338; __utmc=223695111; __utmz=223695111.1475659687.18.15.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided)',
-#     'Host': 'movie.douban.com',
-#     'Pragma': 'no-cache',
-#     'Upgrade-Insecure-Requests': '1',
-#     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36'
-# }
+
 
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html

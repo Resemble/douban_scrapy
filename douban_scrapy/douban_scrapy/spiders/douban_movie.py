@@ -65,20 +65,29 @@ class DoubanMovieSpider(scrapy.Spider):
         print(movie_id)
         bs_obj = BeautifulSoup(response.body, "lxml")
 
-        soup = BeautifulSoup(response.body, "lxml")
-
-        content = soup.find("div", id="content")
+        content = bs_obj.find("div", id="content")
 
         # 标题
         name_and_year = [item.get_text() for item in content.find("h1").find_all("span")]
         name, year = name_and_year if len(name_and_year) == 2 else (name_and_year[0], "")
         movie = [name.strip(), year.strip("()")]
 
+        # movie_content = bs_obj.find('div', id='content')
+        # movie_name = movie_content.h1.span.get_text()
+        # movie_year = movie_content.find('span', class_='year').get_text()
+        # movie_year = re.sub(r"[()]", "", movie_year)
+        # movie_year = re.match(r'\d{4}', movie_year).group(0)
+
+        movie_name = name.strip()
+        movie_year = year.strip("()")
+
         # 左边
-        content_left = soup.find("div", class_="subject clearfix")
+        content_left = bs_obj.find("div", class_="subject clearfix")
 
         nbg_soup = content_left.find("a", class_="nbgnbg").find("img")
         movie.append(nbg_soup.get("src") if nbg_soup else "")
+
+        movie_cover_link = nbg_soup.get("src") if nbg_soup else ""
 
         info = content_left.find("div", id="info").get_text()
         info_dict = dict(
@@ -95,9 +104,10 @@ class DoubanMovieSpider(scrapy.Spider):
             "").replace(
             "\t", " ")
         movie_languages = info_dict.get("语言", "").replace("\t", " ")
-        movie_runtime = info_dict.get("片长", "").replace("\t", " ").strip().replace('分钟',
-                                                                                   '') if "片长" in info_dict else info_dict.get(
+        movie_runtime = info_dict.get("片长", "").replace("\t", " ") if "片长" in info_dict else info_dict.get(
             "单集片长", "").replace("\t", " ")
+        # runtime = re.match("(\d{1,3})", movie_runtime)  .strip().replace('分钟', '')
+        # movie_runtime = runtime.group(1)
         movie_IMDb_link = info_dict.get("IMDb链接", "").replace("\t", " ")
         movie_award = ""
         movie_another_names = info_dict.get("又名", "").replace("\t", " ")
@@ -125,9 +135,11 @@ class DoubanMovieSpider(scrapy.Spider):
         movie.append(info_dict.get("IMDb链接", "").replace("\t", " "))
 
         # 右边
-        content_right = soup.find("div", class_="rating_wrap clearbox")
+        content_right = bs_obj.find("div", class_="rating_wrap clearbox")
         if content_right:
             movie.append(content_right.find("strong", class_="ll rating_num").get_text())
+
+            movie_douban_rating = content_right.find("strong", class_="ll rating_num").get_text()
 
             rating_people = content_right.find("a", class_="rating_people")
             movie.append(rating_people.find("span").get_text() if rating_people else "")
@@ -136,12 +148,7 @@ class DoubanMovieSpider(scrapy.Spider):
             movie.append(", ".join(rating_per_list))
         else:
             movie.extend(["", "", ""])
-
-        movie_content = bs_obj.find('div', id='content')
-        movie_name = movie_content.h1.span.get_text()
-        movie_year = movie_content.find('span', class_='year').get_text()
-        movie_year = re.sub(r"[()]", "", movie_year)
-        movie_year = re.match(r'\d{4}', movie_year).group(0)
+            movie_douban_rating = ""
 
         if info_dict.get("IMDb链接", ""):
             movie_IMDb_link = "http://www.imdb.com/title/" + str(movie_IMDb_link).strip()
@@ -161,15 +168,34 @@ class DoubanMovieSpider(scrapy.Spider):
                 print(err)
 
         # 简介
-        movie_synopsis = movie_content.find('div', id="link-report")
+        movie_synopsis = content.find('div', id="link-report")
         if movie_synopsis is not None:
-            movie_synopsis = movie_synopsis.span.get_text().replace('\n', '').replace(
-                '\u3000\u3000',
-                '').strip()
+            if movie_synopsis.find("span", attrs={"class": "all hidden"}) is not None:
+                movie_synopsis = movie_synopsis.find("span", attrs={"class": "all hidden"}).get_text()
+                # replace('\u3000\u3000', '') 去除br
+                movie_synopsis = " ".join(movie_synopsis.split()).replace('\u3000\u3000', '')
+            else:
+                if movie_synopsis.find("span", attrs={"property": "v:summary"}) is not None:
+                    movie_synopsis = movie_synopsis.find("span", attrs={"property": "v:summary"}).get_text()
+                    movie_synopsis = " ".join(movie_synopsis.split()).replace('\u3000\u3000', '')
+                else:
+                    movie_synopsis = ""
         else:
             movie_synopsis = ""
+
+        # movie_synopsis = content.find('div', id="link-report")
+        # if movie_synopsis is not None:
+        #     # sopu.findAll("div", attrs={"aria-lable": "xxx"});
+        #     if movie_synopsis.find("span", attrs={"property": "v:summary"}) is not None:
+        #         movie_synopsis = movie_synopsis.find("span", attrs={"property": "v:summary"}).get_text().replace(' ',
+        #                                                                                                          '').replace(
+        #             '\n', ' ').replace('\u3000\u3000', '')
+        #     else:
+        #         movie_synopsis = ""
+        # else:
+        #     movie_synopsis = ""
         # 获奖 电视剧的需要改
-        movie_awards_mod = movie_content.find('div', class_="article").find('div', class_="mod")
+        movie_awards_mod = content.find('div', class_="article").find('div', class_="mod")
         if movie_awards_mod is None:
             movie_awards = []
         else:
@@ -194,10 +220,10 @@ class DoubanMovieSpider(scrapy.Spider):
                     temp_award.append(i)
             movie_award = temp_award
         # 喜欢这部电影也喜欢的电影
-        if movie_content.find('div', class_="article").find('div', id="recommendations"):
+        if content.find('div', class_="article").find('div', id="recommendations"):
 
-            movie_recommendation_bd_dls = movie_content.find('div', class_="article").find('div',
-                                                                                           id="recommendations").find(
+            movie_recommendation_bd_dls = content.find('div', class_="article").find('div',
+                                                                                     id="recommendations").find(
                 'div', class_="recommendations-bd").find_all('dl')
             # movie_also_like_movies 第一个是喜欢这部电影并喜欢的电影的页面链接，第二个是一张图片链接，第三个是电影名字
             movie_also_like_movies = []
@@ -209,16 +235,6 @@ class DoubanMovieSpider(scrapy.Spider):
                 movie_also_like_movies.append(movie_like_id)
         else:
             movie_also_like_movies = []
-
-        # 豆瓣评分
-        movie_douban_rating = movie_content.find('div', class_="article").find('div', id="interest_sectl").find('div',
-                                                                                                                class_="rating_wrap clearbox").find(
-            'div', class_="rating_self clearfix").find('strong', class_="ll rating_num").get_text()
-        # print(movie_douban_rating)
-        movie_cover_link = movie_content.find("div", class_="grid-16-8 clearfix").find("div", class_="article").find(
-            "div", class_="indent clearfix").find("div", class_="subjectwrap clearfix").find("div",
-                                                                                             class_="subject clearfix").find(
-            "div", id="mainpic").a.img.get('src')
 
         # 爬照片
         # 剧照

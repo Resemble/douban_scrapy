@@ -4,14 +4,12 @@
     <list default="true" id="e0e2eaf7-bccb-43ac-b1d9-e4571bb77564" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/2fadaef7-b198-49a2-a787-88bfb7688294.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/2fadaef7-b198-49a2-a787-88bfb7688294.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/douban_scrapy/items.py" afterPath="$PROJECT_DIR$/douban_scrapy/items.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/douban_scrapy/middlewares.py" afterPath="$PROJECT_DIR$/douban_scrapy/middlewares.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/douban_scrapy/pipelines.py" afterPath="$PROJECT_DIR$/douban_scrapy/pipelines.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/douban_scrapy/settings.py" afterPath="$PROJECT_DIR$/douban_scrapy/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/douban_scrapy/spiders/dmoz_spider.py" afterPath="$PROJECT_DIR$/douban_scrapy/spiders/dmoz_spider.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/douban_scrapy/spiders/doubanPopMovie.py" afterPath="$PROJECT_DIR$/douban_scrapy/spiders/doubanPopMovie.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/douban_scrapy/spiders/douban_movie.py" afterPath="$PROJECT_DIR$/douban_scrapy/spiders/douban_movie.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test2.py" afterPath="$PROJECT_DIR$/test2.py" />
     </list>
     <ignored path="douban_scrapy.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,12 +24,13 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/douban_scrapy1.1$test.coverage" NAME="test Coverage Results" MODIFIED="1480374165035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/douban_scrapy$douban_movie__1_.coverage" NAME="douban_movie (1) Coverage Results" MODIFIED="1478182013331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/douban_scrapy/spiders" />
-    <SUITE FILE_PATH="coverage/douban_scrapy$dmoz_spider.coverage" NAME="dmoz_spider Coverage Results" MODIFIED="1479300185409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/douban_scrapy/spiders" />
-    <SUITE FILE_PATH="coverage/douban_scrapy$douban_movie.coverage" NAME="douban_movie Coverage Results" MODIFIED="1480761272614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/douban_scrapy$douban_movie.coverage" NAME="douban_movie Coverage Results" MODIFIED="1480822537610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/douban_scrapy$dmoz_spider.coverage" NAME="dmoz_spider Coverage Results" MODIFIED="1480822620286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/douban_scrapy/spiders" />
     <SUITE FILE_PATH="coverage/douban_scrapy$test3.coverage" NAME="test3 Coverage Results" MODIFIED="1479996964820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/douban_scrapy$test.coverage" NAME="test Coverage Results" MODIFIED="1480687296114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/douban_scrapy1.1$test3.coverage" NAME="test3 Coverage Results" MODIFIED="1480584483946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/douban_scrapy$doubanPopMovie.coverage" NAME="doubanPopMovie Coverage Results" MODIFIED="1480758478315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/douban_scrapy$doubanPopMovie__1_.coverage" NAME="doubanPopMovie (1) Coverage Results" MODIFIED="1480823146105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/douban_scrapy/spiders" />
+    <SUITE FILE_PATH="coverage/douban_scrapy$doubanPopMovie.coverage" NAME="doubanPopMovie Coverage Results" MODIFIED="1480823629744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/douban_scrapy$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1479555797518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/douban_scrapy1.1$douban_movie.coverage" NAME="douban_movie Coverage Results" MODIFIED="1480559503453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -62,71 +61,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dmoz_spider.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/douban_scrapy/spiders/dmoz_spider.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-150">
-              <caret line="7" column="52" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="doubanPopMovie.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/douban_scrapy/spiders/doubanPopMovie.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="163" column="24" selection-start-line="163" selection-start-column="24" selection-end-line="163" selection-end-column="24" />
+            <state relative-caret-position="242">
+              <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
-                <marker date="1480758478270" expanded="true" signature="1608:1627" ph="SELECT * FRO... movie" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scrapy.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scrapy.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/douban_scrapy/pipelines.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-              <folding>
-                <element signature="e#193#207#0" expanded="true" />
-                <marker date="1480760964384" expanded="true" signature="2013:4608" ph="CREATE TABLE... mirs_movie" />
-                <marker date="1480760964384" expanded="true" signature="5035:5462" ph="INSERT INTO mirs_movie... " />
-                <marker date="1480760964384" expanded="true" signature="6950:7013" ph="INSERT INTO imdb_rating... " />
-                <marker date="1480760964384" expanded="true" signature="7038:7097" ph="UPDATE mirs_... " />
-                <marker date="1480760964384" expanded="true" signature="7044:7083" ph="INSERT INTO imdb_rating... " />
-                <marker date="1480760964384" expanded="true" signature="7970:8042" ph="INSERT INTO stills_links... " />
-                <marker date="1480760964384" expanded="true" signature="8067:8134" ph="UPDATE mirs_... " />
-                <marker date="1480760964384" expanded="true" signature="9076:9148" ph="INSERT INTO poster_links... " />
-                <marker date="1480760964384" expanded="true" signature="9173:9240" ph="UPDATE mirs_... " />
-                <marker date="1480760964384" expanded="true" signature="10267:10334" ph="INSERT INTO short_comments... " />
-                <marker date="1480760964384" expanded="true" signature="10363:10429" ph="UPDATE mirs_... " />
-                <marker date="1480760964384" expanded="true" signature="11432:11491" ph="INSERT INTO reviews... " />
-                <marker date="1480760964384" expanded="true" signature="11520:11575" ph="UPDATE mirs_... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="middlewares.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/douban_scrapy/middlewares.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -147,42 +88,59 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2fadaef7-b198-49a2-a787-88bfb7688294/console.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="25">
+              <caret line="149" column="19" selection-start-line="149" selection-start-column="19" selection-end-line="149" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/douban_scrapy/pipelines.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="71" column="61" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
+              <folding>
+                <element signature="e#193#207#0" expanded="true" />
+                <marker date="1480818901458" expanded="true" signature="2013:4609" ph="CREATE TABLE... mirs_movie" />
+                <marker date="1480818901458" expanded="true" signature="5036:5463" ph="INSERT INTO mirs_movie... " />
+                <marker date="1480818901458" expanded="true" signature="6951:7014" ph="INSERT INTO imdb_rating... " />
+                <marker date="1480818901458" expanded="true" signature="7039:7098" ph="UPDATE mirs_... " />
+                <marker date="1480818901458" expanded="true" signature="7045:7084" ph="INSERT INTO imdb_rating... " />
+                <marker date="1480818901458" expanded="true" signature="7971:8043" ph="INSERT INTO stills_links... " />
+                <marker date="1480818901458" expanded="true" signature="8068:8135" ph="UPDATE mirs_... " />
+                <marker date="1480818901458" expanded="true" signature="9077:9149" ph="INSERT INTO poster_links... " />
+                <marker date="1480818901458" expanded="true" signature="9174:9241" ph="UPDATE mirs_... " />
+                <marker date="1480818901458" expanded="true" signature="10268:10335" ph="INSERT INTO short_comments... " />
+                <marker date="1480818901458" expanded="true" signature="10364:10430" ph="UPDATE mirs_... " />
+                <marker date="1480818901458" expanded="true" signature="11433:11492" ph="INSERT INTO reviews... " />
+                <marker date="1480818901458" expanded="true" signature="11521:11576" ph="UPDATE mirs_... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="middlewares.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/douban_scrapy/middlewares.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/douban_scrapy/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="941">
+            <state relative-caret-position="150">
               <caret line="168" column="24" selection-start-line="168" selection-start-column="24" selection-end-line="168" selection-end-column="24" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="douban_movie.movie" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.movie">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="douban_movie.mirs_movie" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -190,11 +148,12 @@
       <file leaf-file-name="douban_movie.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/douban_scrapy/spiders/douban_movie.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+            <state relative-caret-position="176">
+              <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
               <folding>
-                <marker date="1480761316548" expanded="false" signature="24:275" ph="import ..." />
-                <marker date="1480761316548" expanded="true" signature="1479:1498" ph="SELECT * FRO... movie" />
+                <element signature="e#24#37#0" expanded="true" />
+                <marker date="1480823701550" expanded="true" signature="24:275" ph="import ..." />
+                <marker date="1480823701550" expanded="true" signature="1479:1498" ph="SELECT * FRO... movie" />
               </folding>
             </state>
           </provider>
@@ -225,16 +184,16 @@
         <option value="$PROJECT_DIR$/test3.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/2fadaef7-b198-49a2-a787-88bfb7688294/console.sql" />
-        <option value="$PROJECT_DIR$/douban_scrapy/spiders/dmoz_spider.py" />
         <option value="$PROJECT_DIR$/test2.py" />
-        <option value="$PROJECT_DIR$/douban_scrapy/settings.py" />
         <option value="$PROJECT_DIR$/douban_scrapy/items.py" />
-        <option value="$PROJECT_DIR$/douban_scrapy/spiders/doubanPopMovie.py" />
-        <option value="$PROJECT_DIR$/douban_scrapy/pipelines.py" />
         <option value="dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie" />
-        <option value="$PROJECT_DIR$/douban_scrapy/spiders/douban_movie.py" />
-        <option value="$PROJECT_DIR$/douban_scrapy/middlewares.py" />
+        <option value="$PROJECT_DIR$/douban_scrapy/pipelines.py" />
         <option value="$PROJECT_DIR$/scrapy.log" />
+        <option value="$PROJECT_DIR$/douban_scrapy/spiders/dmoz_spider.py" />
+        <option value="$PROJECT_DIR$/douban_scrapy/spiders/doubanPopMovie.py" />
+        <option value="$PROJECT_DIR$/douban_scrapy/spiders/douban_movie.py" />
+        <option value="$PROJECT_DIR$/douban_scrapy/settings.py" />
+        <option value="$PROJECT_DIR$/douban_scrapy/middlewares.py" />
       </list>
     </option>
   </component>
@@ -295,7 +254,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -348,12 +306,13 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="database.main" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="F:/Git/Git/bin/git.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="F:\nodejs\node.exe" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
@@ -365,7 +324,7 @@
       <recent name="G:\MovieRecommendation\Program\python3_really\douban_scrapy\douban_scrapy\spiders" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.douban_movie">
+  <component name="RunManager" selected="Python.doubanPopMovie">
     <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -380,24 +339,6 @@
       <module name="douban_scrapy" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="douban_movie (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/douban_scrapy/spiders" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="douban_scrapy" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/douban_scrapy/spiders/douban_movie.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -426,15 +367,15 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="F:\Python35\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/douban_scrapy/spiders" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="douban_scrapy" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/douban_scrapy/spiders/dmoz_spider.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="SCRIPT_NAME" value="F:/Python35/Lib/site-packages/scrapy/cmdline.py" />
+      <option name="PARAMETERS" value="crawl dmoz" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
@@ -452,6 +393,24 @@
       <module name="douban_scrapy" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="doubanPopMovie (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/douban_scrapy/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="douban_scrapy" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/douban_scrapy/spiders/doubanPopMovie.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -704,18 +663,18 @@
       <item index="0" class="java.lang.String" itemvalue="Python.doubanPopMovie" />
       <item index="1" class="java.lang.String" itemvalue="Python.douban_movie" />
       <item index="2" class="java.lang.String" itemvalue="Python.test" />
-      <item index="3" class="java.lang.String" itemvalue="Python.douban_movie (1)" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test2" />
-      <item index="5" class="java.lang.String" itemvalue="Python.dmoz_spider" />
-      <item index="6" class="java.lang.String" itemvalue="Python.test3" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test2" />
+      <item index="4" class="java.lang.String" itemvalue="Python.dmoz_spider" />
+      <item index="5" class="java.lang.String" itemvalue="Python.test3" />
+      <item index="6" class="java.lang.String" itemvalue="Python.doubanPopMovie (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test3" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test2" />
-        <item index="3" class="java.lang.String" itemvalue="Python.dmoz_spider" />
-        <item index="4" class="java.lang.String" itemvalue="Python.douban_movie (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Python.doubanPopMovie (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Python.dmoz_spider" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test3" />
+        <item index="4" class="java.lang.String" itemvalue="Python.test2" />
       </list>
     </recent_temporary>
   </component>
@@ -739,22 +698,22 @@
     <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4010582" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1265625" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.06979167" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13177083" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31534392" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20634921" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17460318" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1957672" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -776,7 +735,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="273" />
+      <option name="time" value="275" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -785,6 +744,186 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2fadaef7-b198-49a2-a787-88bfb7688294/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="149" column="19" selection-start-line="149" selection-start-column="19" selection-end-line="149" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scrapy.log.bak">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/douban_scrapy/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="71" column="61" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
+          <folding>
+            <element signature="e#193#207#0" expanded="true" />
+            <marker date="1480818901458" expanded="true" signature="2013:4609" ph="CREATE TABLE... mirs_movie" />
+            <marker date="1480818901458" expanded="true" signature="5036:5463" ph="INSERT INTO mirs_movie... " />
+            <marker date="1480818901458" expanded="true" signature="6951:7014" ph="INSERT INTO imdb_rating... " />
+            <marker date="1480818901458" expanded="true" signature="7039:7098" ph="UPDATE mirs_... " />
+            <marker date="1480818901458" expanded="true" signature="7045:7084" ph="INSERT INTO imdb_rating... " />
+            <marker date="1480818901458" expanded="true" signature="7971:8043" ph="INSERT INTO stills_links... " />
+            <marker date="1480818901458" expanded="true" signature="8068:8135" ph="UPDATE mirs_... " />
+            <marker date="1480818901458" expanded="true" signature="9077:9149" ph="INSERT INTO poster_links... " />
+            <marker date="1480818901458" expanded="true" signature="9174:9241" ph="UPDATE mirs_... " />
+            <marker date="1480818901458" expanded="true" signature="10268:10335" ph="INSERT INTO short_comments... " />
+            <marker date="1480818901458" expanded="true" signature="10364:10430" ph="UPDATE mirs_... " />
+            <marker date="1480818901458" expanded="true" signature="11433:11492" ph="INSERT INTO reviews... " />
+            <marker date="1480818901458" expanded="true" signature="11521:11576" ph="UPDATE mirs_... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scrapy.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="17636" column="36" selection-start-line="17636" selection-start-column="31" selection-end-line="17636" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="LargeFileEditor">
+        <state />
+      </provider>
+    </entry>
     <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -902,7 +1041,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
+    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.movie_copy">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1032,284 +1171,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_bundle/pydev_monkey_qt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1480687296078" expanded="true" signature="157:208" ph="UPDATE mirs_... " />
-            <marker date="1480687296078" expanded="true" signature="218:277" ph="UPDATE mirs_... " />
-            <marker date="1480687296078" expanded="true" signature="287:311" ph="SELECT * FRO... mirs_movie" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/1162022518/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="2762" column="8" selection-start-line="2762" selection-start-column="8" selection-end-line="2762" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/douban_scrapy/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/douban_scrapy/spiders/doubanPopMovie.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="163" column="24" selection-start-line="163" selection-start-column="24" selection-end-line="163" selection-end-column="24" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-            <marker date="1480758478270" expanded="true" signature="1608:1627" ph="SELECT * FRO... movie" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/douban_scrapy/pipelines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
+        <state relative-caret-position="1174">
           <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-          <folding>
-            <element signature="e#193#207#0" expanded="true" />
-            <marker date="1480760964384" expanded="true" signature="2013:4608" ph="CREATE TABLE... mirs_movie" />
-            <marker date="1480760964384" expanded="true" signature="5035:5462" ph="INSERT INTO mirs_movie... " />
-            <marker date="1480760964384" expanded="true" signature="6950:7013" ph="INSERT INTO imdb_rating... " />
-            <marker date="1480760964384" expanded="true" signature="7038:7097" ph="UPDATE mirs_... " />
-            <marker date="1480760964384" expanded="true" signature="7044:7083" ph="INSERT INTO imdb_rating... " />
-            <marker date="1480760964384" expanded="true" signature="7970:8042" ph="INSERT INTO stills_links... " />
-            <marker date="1480760964384" expanded="true" signature="8067:8134" ph="UPDATE mirs_... " />
-            <marker date="1480760964384" expanded="true" signature="9076:9148" ph="INSERT INTO poster_links... " />
-            <marker date="1480760964384" expanded="true" signature="9173:9240" ph="UPDATE mirs_... " />
-            <marker date="1480760964384" expanded="true" signature="10267:10334" ph="INSERT INTO short_comments... " />
-            <marker date="1480760964384" expanded="true" signature="10363:10429" ph="UPDATE mirs_... " />
-            <marker date="1480760964384" expanded="true" signature="11432:11491" ph="INSERT INTO reviews... " />
-            <marker date="1480760964384" expanded="true" signature="11520:11575" ph="UPDATE mirs_... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/douban_scrapy/spiders/dmoz_spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
-          <caret line="7" column="52" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/douban_scrapy/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="941">
-          <caret line="168" column="24" selection-start-line="168" selection-start-column="24" selection-end-line="168" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding />
+        <state relative-caret-position="500">
+          <caret line="43" column="29" selection-start-line="31" selection-start-column="8" selection-end-line="43" selection-end-column="29" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1354,12 +1230,75 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/douban_scrapy/spiders/douban_movie.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+        <state relative-caret-position="176">
+          <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
           <folding>
-            <marker date="1480761316548" expanded="false" signature="24:275" ph="import ..." />
-            <marker date="1480761316548" expanded="true" signature="1479:1498" ph="SELECT * FRO... movie" />
+            <element signature="e#24#37#0" expanded="true" />
+            <marker date="1480823701550" expanded="true" signature="24:275" ph="import ..." />
+            <marker date="1480823701550" expanded="true" signature="1479:1498" ph="SELECT * FRO... movie" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/douban_scrapy/spiders/doubanPopMovie.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1391,18 +1330,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/douban_scrapy/middlewares.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="351">
+          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scrapy.log">
-      <provider selected="true" editor-type-id="text-editor">
+    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
+      <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/fb122034/2fadaef7-b198-49a2-a787-88bfb7688294/douban_movie.mirs_movie">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/douban_scrapy/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="168" column="24" selection-start-line="168" selection-start-column="24" selection-end-line="168" selection-end-column="24" />
           <folding />
         </state>
       </provider>

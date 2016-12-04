@@ -14,7 +14,7 @@ class RandomUserAgent(object):
         return cls(agents = crawler.settings.getlist('USER_AGENTS'))
 
     def process_request(self, request, spider):
-        # print("**************************" + random.choice(self.agents))
+        print(random.choice(self.agents))
         request.headers['User-Agent'] = random.choice(self.agents)
 
 #
