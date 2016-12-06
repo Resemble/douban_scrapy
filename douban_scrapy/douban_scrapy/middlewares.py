@@ -1,6 +1,6 @@
 ﻿import random
 import base64
-from douban_scrapy.proxyGet import get_proxy
+
 
 
 class RandomUserAgent(object):

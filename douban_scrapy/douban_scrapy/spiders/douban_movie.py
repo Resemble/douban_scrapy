@@ -34,6 +34,8 @@ class DoubanMovieSpider(scrapy.Spider):
     def __init__(self, *a, **kwargs):
         super().__init__(*a, **kwargs)
         DEFAULT_REQUEST_HEADERS['Cookie'] = "bid=%s" % "".join(random.sample(string.ascii_letters + string.digits, 11))
+        print(DEFAULT_REQUEST_HEADERS['Cookie'])
+        # print("888888888888888")
         self.headers = DEFAULT_REQUEST_HEADERS
         self.movie_id = 0
         self.cur_stills_requests = 0
@@ -55,7 +57,10 @@ class DoubanMovieSpider(scrapy.Spider):
             for row in results:
                 self.movie_id = row[1]
                 movie_url = 'https://movie.douban.com/subject/' + str(self.movie_id)
-                yield scrapy.Request(url=movie_url)
+                self.headers['Cookie'] = "bid=%s" % "".join(
+                    random.sample(string.ascii_letters + string.digits, 11))
+                print(self.headers['Cookie'])
+                yield scrapy.Request(url=movie_url, headers=self.headers)
         except Exception as err:
             print(err)
 
@@ -71,12 +76,6 @@ class DoubanMovieSpider(scrapy.Spider):
         name_and_year = [item.get_text() for item in content.find("h1").find_all("span")]
         name, year = name_and_year if len(name_and_year) == 2 else (name_and_year[0], "")
         movie = [name.strip(), year.strip("()")]
-
-        # movie_content = bs_obj.find('div', id='content')
-        # movie_name = movie_content.h1.span.get_text()
-        # movie_year = movie_content.find('span', class_='year').get_text()
-        # movie_year = re.sub(r"[()]", "", movie_year)
-        # movie_year = re.match(r'\d{4}', movie_year).group(0)
 
         movie_name = name.strip()
         movie_year = year.strip("()")
