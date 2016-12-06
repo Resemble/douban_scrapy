@@ -1,5 +1,5 @@
 # douban_scrapy
-Use scrapy framework to climb doubanMovie
+Use scrapy framework to Crawl doubanMovie
 
 =======
 豆瓣电影爬虫
